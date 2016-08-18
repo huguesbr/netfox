@@ -14,9 +14,7 @@ DESC
   s.source           = { :git => "https://github.com/kasketis/netfox.git", :tag => '1.8' }
 
   s.platform     = :ios, '8.0'
-  s.platform     = :osx, '10.0'
   s.requires_arc = true
 
   s.ios.source_files = "netfox/Core/*.swift" , "netfox/iOS/*.swift"
-  s.osx.source_files = "netfox/Core/*.swift" , "netfox/OSX/*.swift"
 end
