@@ -38,6 +38,7 @@ class NFXListController_iOS: NFXListController, UITableViewDelegate, UITableView
         self.tableView.registerClass(NFXListCell.self, forCellReuseIdentifier: NSStringFromClass(NFXListCell))
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.NFXSettings(), style: .Plain, target: self, action: Selector("settingsButtonPressed"))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .Normal, target: self, action: #selector(closeButtonPressed))
 
         let searchView = UIView()
         searchView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame) - 60, 0)
@@ -84,6 +85,11 @@ class NFXListController_iOS: NFXListController, UITableViewDelegate, UITableView
         var settingsController: NFXSettingsController_iOS
         settingsController = NFXSettingsController_iOS()
         self.navigationController?.pushViewController(settingsController, animated: true)
+    }
+    
+    func closeButtonPressed()
+    {
+        NFX.sharedInstance().hide()
     }
     
     // MARK: UISearchResultsUpdating
